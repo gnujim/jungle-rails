@@ -10,7 +10,8 @@ Rails.application.routes.draw do
     delete :remove_item
   end
 
-  resources :orders, only: [:create, :show]
+  resources :orders, only: [:create, :show] 
+  resources :users, only: [:new, :create]
 
   namespace :admin do
     root to: 'dashboard#show'
