@@ -5,7 +5,7 @@
   </header>
 
   <div class="order-summary jumbotron">
-    <h4>Thank you for your order <%= @current_user.first_name %>! (<%= @current_user.email %>) </h4>
+    <h4>Thank you for your order <%= @current_user.first_name %>! (<%= @current_user.email %>)</h4>
   </div>
 
   <div class="panel panel-default items">
@@ -19,9 +19,8 @@
         </tr>
       </thead>
       <tbody>
-        <% @cart_total = 0 %>
-        <% cart.each do |product_id, details| %>
-          <%= render 'order', product_id: product_id, details: details %>
+        <% @line_items.each do |item| %>
+          <%= render 'line_item', item: item %>
         <% end %>
       </tbody>
       <tfoot>
@@ -30,7 +29,7 @@
             TOTAL:
           </th>
           <th>
-            <%= @cart_total %>
+            <%= @order.total %>
           </th>
         </tr>
       </tfoot>
