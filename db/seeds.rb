@@ -148,7 +148,7 @@ Review.create!({
 })
 
 pro1.reviews.create!({
-  description: Faker::Hacker.say_something_smart,
+  description: 'I love these socks. I love hipsters.',
   rating: 5,
   product_id: 4,
   user_id: 2
@@ -165,7 +165,7 @@ Review.create!({
   description: Faker::Hacker.say_something_smart,
   rating: 5,
   product_id: 6,
-  user_id: 3
+  user_id: 1
 })
 
 Review.create!({

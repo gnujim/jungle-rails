@@ -26,6 +26,34 @@
       </div>
     </div>
 
+    <div class="row">
+      <table class="table table-bordered">
+        <thead>
+          <tr> 
+            <th>User</th>
+            <th>Rating</th>
+            <th colspan="2">Review</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @reviews.each do |review| %>
+            <% if user = User.find_by(id: review.user_id) %>
+              <tr>
+                <td>
+                  <%= user.first_name %>
+                </td>
+                <td>
+                  <%= review.rating %>
+                </td>
+                <td>
+                  <%= review.description %>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </article>
-
 </section>
+ 
