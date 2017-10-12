@@ -8,3 +8,4 @@ class Order < ActiveRecord::Base
   validates :stripe_charge_id, presence: true
 
 end
+ 

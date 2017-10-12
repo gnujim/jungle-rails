@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-  end
+  end 
 
   def create
     charge = perform_stripe_charge
