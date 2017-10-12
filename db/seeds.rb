@@ -132,5 +132,48 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+pro1 = Product.find_or_create_by! id: '4'
+
+## REVIEWS
+
+puts "Re-creating Reviews ..."
+
+Review.destroy_all
+
+Review.create!({
+  description: Faker::Hacker.say_something_smart,
+  rating: 2,
+  product_id: 3,
+  user_id: 2
+})
+
+pro1.reviews.create!({
+  description: Faker::Hacker.say_something_smart,
+  rating: 5,
+  product_id: 4,
+  user_id: 2
+})
+
+pro1.reviews.create!({
+  description: Faker::Hacker.say_something_smart,
+  rating: 2,
+  product_id: 4,
+  user_id: 1
+})
+
+Review.create!({
+  description: Faker::Hacker.say_something_smart,
+  rating: 5,
+  product_id: 6,
+  user_id: 3
+})
+
+Review.create!({
+  description: Faker::Hacker.say_something_smart,
+  rating: 1,
+  product_id: 7,
+  user_id: 1
+})
+
 
 puts "DONE!"
