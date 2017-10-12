@@ -19,6 +19,7 @@
         </tr>
       </thead>
       <tbody>
+      <%# <%= render @line_items %> 
         <% @line_items.each do |item| %>
           <%= render 'line_item', item: item %>
         <% end %>
