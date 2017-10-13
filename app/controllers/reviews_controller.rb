@@ -1,4 +1,7 @@
 class ReviewsController < ApplicationController
+
+  before_filter :authorize
+
   def create
     product = Product.find(params[:product_id])
     review = product.reviews.new(review_params)
@@ -10,6 +13,14 @@ class ReviewsController < ApplicationController
     else
       redirect_to product_path(product), notice: 'Could not save review!'
     end
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @review = Review.find(@product.id)
+    @review.destroy
+
+    redirect_to :back
   end
 
   private

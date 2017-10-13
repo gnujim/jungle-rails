@@ -26,11 +26,15 @@
       </div>
     </div>
 
-    <%= form_for [@product, @review] do |f| %>
-      <%= f.text_area :description %>
-      <%= f.select :rating, [[1], [2], [3], [4], [5]] %>
-      <%= f.submit "Create" %>
-    <% end %>
+  
+      <% if @current_user %>
+        <%= form_for [@product, @review] do |f| %>
+          <%= f.text_area :description %>
+          <%= f.select :rating, [[1], [2], [3], [4], [5]] %>
+          <%= f.submit "Create" %>
+        <% end %>
+      <% end %>
+  
 
     <div class="row">
       <table class="table table-bordered">
@@ -54,6 +58,13 @@
                 <td>
                   <%= review.description %>
                 </td>
+                <% if current_user %>
+                  <td>
+                    <% if current_user.id == review.user_id %>
+                      <%= link_to fa_icon('trash-o'), review, :method => :delete %>
+                    <% end %>                      
+                  </td>
+                <% end %>
               </tr>
             <% end %>
           <% end %>
