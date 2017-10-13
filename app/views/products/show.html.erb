@@ -26,6 +26,12 @@
       </div>
     </div>
 
+    <%= form_for [@product, @review] do |f| %>
+      <%= f.text_area :description %>
+      <%= f.select :rating, [[1], [2], [3], [4], [5]] %>
+      <%= f.submit "Create" %>
+    <% end %>
+
     <div class="row">
       <table class="table table-bordered">
         <thead>
