@@ -53,7 +53,9 @@
                   <%= user.first_name %>
                 </td>
                 <td>
-                  <%= review.rating %>
+                  <% review.rating.times do || %>
+                     ⭐️
+                  <% end %>
                 </td>
                 <td>
                   <%= review.description %>
