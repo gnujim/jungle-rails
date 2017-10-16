@@ -27,15 +27,16 @@
     </div>
 
   
-      <% if current_user %>
-        <%= form_for [@product, @review] do |f| %>
-          <%= f.text_area :description %>
-          <%= f.select :rating, [[1], [2], [3], [4], [5]] %>
-          <%= f.submit "Create" %>
-        <% end %>
+    <% if current_user %>
+      <%= form_for [@product, @review] do |f| %>
+        <%= f.text_area :description %>
+        <%= f.select :rating, [[1], [2], [3], [4], [5]] %>
+        <%= f.submit "Create" %>
       <% end %>
-  
+    <% end %>
+  </article>
 
+  <div class="reviews">
     <div class="row">
       <table class="table table-bordered">
         <thead>
@@ -73,6 +74,6 @@
         </tbody>
       </table>
     </div>
-  </article>
+  </div>
 </section>
  
