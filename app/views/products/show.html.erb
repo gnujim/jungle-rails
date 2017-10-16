@@ -27,7 +27,7 @@
     </div>
 
   
-      <% if @current_user %>
+      <% if current_user %>
         <%= form_for [@product, @review] do |f| %>
           <%= f.text_area :description %>
           <%= f.select :rating, [[1], [2], [3], [4], [5]] %>
