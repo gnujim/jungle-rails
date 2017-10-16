@@ -15,7 +15,8 @@ A mini e-commerce application built with Rails 4.2.
 9. Run `bin/rails s -b 0.0.0.0` to start the server
 
 ## Screenshots
-
+![Main Page](https://github.com/gnujim/jungle-rails/blob/master/docs/Screen%20Shot%202017-10-15%20at%2022.08.32.png)
+![Item Page with Reviews](https://github.com/gnujim/jungle-rails/blob/master/docs/Screen%20Shot%202017-10-15%20at%2022.15.11.png)
 
 ## Stripe Testing
 
